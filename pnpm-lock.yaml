@@ -1,23 +1,33 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@faker-js/faker': ^6.2.0
+  '@graphql-tools/schema': ^8.3.10
   '@graphql-yoga/node': 2.3.0
+  '@prisma/client': ^3.13.0
   '@types/node': ^16.11.7
+  cross-env: ^7.0.3
   fastify: 3.24.1
   graphql: ^16.4.0
+  prisma: ^3.13.0
   ts-node: 10.4.0
   ts-node-dev: ^1.1.8
   typescript: 4.5.2
 
 dependencies:
+  '@graphql-tools/schema': 8.3.10_graphql@16.4.0
   '@graphql-yoga/node': 2.3.0_graphql@16.4.0
+  cross-env: 7.0.3
   fastify: 3.24.1
   graphql: 16.4.0
   ts-node: 10.4.0_3ed7c873087c6a2214075b03267b9e7b
   typescript: 4.5.2
 
 devDependencies:
+  '@faker-js/faker': 6.2.0
+  '@prisma/client': 3.13.0_prisma@3.13.0
   '@types/node': 16.11.30
+  prisma: 3.13.0
   ts-node-dev: 1.1.8_typescript@4.5.2
 
 packages:
@@ -82,6 +92,11 @@ packages:
       graphql: 16.4.0
       tiny-lru: 7.0.6
     dev: false
+
+  /@faker-js/faker/6.2.0:
+    resolution: {integrity: sha512-3kIcQ+aTr3I+LqDbJwbINFk5oA+a63LH57GPJt9PM8AWqN7nCwnubuSiWosHYQlyf2NicrvpzXQxllyLeEdpyQ==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: true
 
   /@fastify/ajv-compiler/1.1.0:
     resolution: {integrity: sha512-gvCOUNpXsWrIQ3A4aXCLIdblL0tDq42BG/2Xw7oxbil9h11uow10ztS2GuFazNBfjbrsZ5nl+nPl5jDSjj5TSg==}
@@ -171,6 +186,29 @@ packages:
       '@repeaterjs/repeater': 3.0.4
       tslib: 2.4.0
     dev: false
+
+  /@prisma/client/3.13.0_prisma@3.13.0:
+    resolution: {integrity: sha512-lnEA2tTyVbO5mS1ehmHJQKBDiKB8shaR6s3azwj3Azfi5XHIfnqmkolLCvUeFYnkDCNVzGXJpUgKwQt/UOOYVQ==}
+    engines: {node: '>=12.6'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b
+      prisma: 3.13.0
+    dev: true
+
+  /@prisma/engines-version/3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b:
+    resolution: {integrity: sha512-TGp9rvgJIKo8NgvAHSwOosbut9mTA7VC6/rpQI9gh+ySSRjdQFhbGyNUiOcQrlI9Ob2DWeO7y4HEnhdKxYiECg==}
+    dev: true
+
+  /@prisma/engines/3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b:
+    resolution: {integrity: sha512-Ip9CcCeUocH61eXu4BUGpvl5KleQyhcUVLpWCv+0ZmDv44bFaDpREqjGHHdRupvPN/ugB6gTlD9b9ewdj02yVA==}
+    requiresBuild: true
+    dev: true
 
   /@repeaterjs/repeater/3.0.4:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
@@ -328,6 +366,23 @@ packages:
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: false
+
+  /cross-spawn/7.0.3:
+    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+    engines: {node: '>= 8'}
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+    dev: false
 
   /cross-undici-fetch/0.2.5:
     resolution: {integrity: sha512-6IR+JN6o2UMNj2f3fu0ZVkZeP0h22DRKzq78SiMenkqyBYyGIT1AkZjHkItvh0A80LdsAlWENHUpvapapePucw==}
@@ -577,6 +632,10 @@ packages:
     engines: {node: '>=0.12.0'}
     dev: true
 
+  /isexe/2.0.0:
+    resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
+    dev: false
+
   /json-schema-traverse/0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
     dev: false
@@ -657,6 +716,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /path-key/3.1.1:
+    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
+    engines: {node: '>=8'}
+    dev: false
+
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: true
@@ -682,6 +746,16 @@ packages:
       quick-format-unescaped: 4.0.4
       sonic-boom: 1.4.1
     dev: false
+
+  /prisma/3.13.0:
+    resolution: {integrity: sha512-oO1auBnBtieGdiN+57IgsA9Vr7Sy4HkILi1KSaUG4mpKfEbnkTGnLOxAqjLed+K2nsG/GtE1tJBtB7JxN1a78Q==}
+    engines: {node: '>=12.6'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b
+      ts-pattern: 4.0.2
+    dev: true
 
   /process-warning/1.0.0:
     resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
@@ -774,6 +848,18 @@ packages:
 
   /set-cookie-parser/2.4.8:
     resolution: {integrity: sha512-edRH8mBKEWNVIVMKejNnuJxleqYE/ZSdcT8/Nem9/mmosx12pctd80s2Oy00KNZzrogMZS5mauK2/ymL1bvlvg==}
+    dev: false
+
+  /shebang-command/2.0.0:
+    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
+    engines: {node: '>=8'}
+    dependencies:
+      shebang-regex: 3.0.0
+    dev: false
+
+  /shebang-regex/3.0.0:
+    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
+    engines: {node: '>=8'}
     dev: false
 
   /sonic-boom/1.4.1:
@@ -905,6 +991,10 @@ packages:
       yn: 3.1.1
     dev: true
 
+  /ts-pattern/4.0.2:
+    resolution: {integrity: sha512-eHqR/7A6fcw05vCOfnL6RwgGJbVi9G/YHTdYdjYmElhDdJ1SMn7pWs+6+YuxygaFwQS/g+cIDlu+UD8IVpur1A==}
+    dev: true
+
   /tsconfig/7.0.0:
     resolution: {integrity: sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw==}
     dependencies:
@@ -963,6 +1053,14 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+    dev: false
+
+  /which/2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
+    engines: {node: '>= 8'}
+    hasBin: true
+    dependencies:
+      isexe: 2.0.0
     dev: false
 
   /wrappy/1.0.2:

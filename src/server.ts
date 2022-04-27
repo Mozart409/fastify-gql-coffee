@@ -1,5 +1,7 @@
 import { createServer } from '@graphql-yoga/node'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
+import { createContext } from './context'
+import { schema } from './schema'
 
 export function buildApp(logging = true) {
   const app = fastify({ logger: logging })
@@ -8,41 +10,8 @@ export function buildApp(logging = true) {
     req: FastifyRequest
     reply: FastifyReply
   }>({
-    schema: {
-      typeDefs: /* GraphQL */ `
-        type Query {
-          hello: String
-          isFastify: Boolean
-        }
-        type Mutation {
-          hello: String
-        }
-        type Subscription {
-          countdown(from: Int!, interval: Int!): Int!
-        }
-      `,
-      resolvers: {
-        Query: {
-          hello: () => 'world',
-          isFastify: (_, __, context) => !!context.req && !!context.reply,
-        },
-        Mutation: {
-          hello: () => 'world',
-        },
-        Subscription: {
-          countdown: {
-            subscribe: async function* (_, { from, interval }) {
-              for (let i = from; i >= 0; i--) {
-                await new Promise((resolve) =>
-                  setTimeout(resolve, interval ?? 1000)
-                )
-                yield { countdown: i }
-              }
-            },
-          },
-        },
-      },
-    },
+    schema,
+    context: createContext,
     // Integrate Fastify Logger to Yoga
     logging: app.log,
   })
